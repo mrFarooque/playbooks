@@ -1,7 +1,7 @@
 ---
 - name: run my local script
-  hosts: shdemo-rpi
-  
+  hosts: shdemo_rpi
+
   tasks:
     - name: Run script
       shell: |
