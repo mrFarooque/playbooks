@@ -1,12 +1,13 @@
 ---
 - name: run my local script
-  hosts: laptops
-  remote_user: farooque
-  become_user: root
-
+  hosts: shdemo-rpi
+  
   tasks:
-    - name: running local script
-      command: sh /home/farooque/Desktop/Ansible
+    - name: Run script
+      shell: |
+        echo "____________"
+        echo "You have successfully completed your task"
+        echo "____________"
       register: script_output
 
     - name: Display script output
