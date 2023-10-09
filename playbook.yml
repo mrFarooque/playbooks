@@ -11,7 +11,7 @@
     #     dest: /home/farooque/Desktop/Ansible
 
     - name: run script
-      command: sh playbooks/script.sh
+      command: sh script.sh
       register: script_output
 
     - name: Display script output
