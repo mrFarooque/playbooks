@@ -1,14 +1,12 @@
 ---
-- name: Run the script and display output
-  hosts: localhost
-  gather_facts: false
+- name: run my local script
+  hosts: laptops
+  remote_user: farooque
+  become_user: root
 
   tasks:
-    - name: Run script
-      shell: |
-        echo "____________"
-        echo "You have successfully completed your task"
-        echo "____________"
+    - name: running local script
+      command: sh /home/farooque/Desktop/Ansible
       register: script_output
 
     - name: Display script output
