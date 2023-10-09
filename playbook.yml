@@ -1,0 +1,19 @@
+---
+- name: run my script
+  hosts: laptops
+  remote_user: farooque
+  become_user: root
+
+  tasks:
+    - name: Copy file
+      copy:
+        src: playbooks/script.sh
+        dest: /home/farooque/Desktop/Ansible
+        
+    - name: run script
+      command: sh /home/farooque/Desktop/Ansible/script.sh
+      register: script_output
+
+    - name: Display script output
+      debug:
+        var: script_output.stdout_lines
