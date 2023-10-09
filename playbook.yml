@@ -1,17 +1,14 @@
 ---
-- name: run my script
+- name: Run the script and display output
   hosts: localhost
-  # remote_user: farooque
-  # become_user: root
+  gather_facts: false
 
   tasks:
-    # - name: Copy file
-    #   copy:
-    #     src: playbooks/script.sh
-    #     dest: /home/farooque/Desktop/Ansible
-
-    - name: run script
-      command: sh script.sh
+    - name: Run script
+      shell: |
+        echo "____________"
+        echo "You have successfully completed your task"
+        echo "____________"
       register: script_output
 
     - name: Display script output
