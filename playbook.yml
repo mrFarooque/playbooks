@@ -4,12 +4,6 @@
   
   tasks:
     - name: Run the script
-      ansible.builtin.shell: ./script.sh
+      ansible.builtin.shell: ./script.sh >> output.txt
       args:
         chdir: /home/shadmin/test
-      register: script_output
-      changed_when: true
-      
-    - name: Display script output
-      debug:
-        var: script_output.stdout_lines
