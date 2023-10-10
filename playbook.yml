@@ -3,13 +3,7 @@
   hosts: shdemo_rpi
 
   tasks:
-    - name: Run script
-      shell: |
-        echo "____________"
-        echo "You have successfully completed your task"
-        echo "____________"
-      register: script_output
-
-    - name: Display script output
-      debug:
-        var: script_output.stdout_lines
+    tasks:
+    - name: Echo a Message
+      ansible.builtin.debug:
+        msg: "Hello, Ansible!"
