@@ -3,6 +3,12 @@
   hosts: shdemo_rpi
   
   tasks:
-    - name: Echo a Message
-      ansible.builtin.debug:
-        msg: "Hello, Ansible!"
+    - name: Run the script
+      ansible.builtin.shell: ./script.sh
+      args:
+        chdir: /home/shadmin/test
+      register: script_output
+      
+    - name: Display script output
+      debug:
+        var: script_output.stdout_lines
