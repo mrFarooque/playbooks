@@ -1,9 +1,8 @@
 ---
 - name: run my local script
   hosts: shdemo_rpi
-
+  
   tasks:
-    tasks:
     - name: Echo a Message
       ansible.builtin.debug:
         msg: "Hello, Ansible!"
