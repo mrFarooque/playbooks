@@ -9,10 +9,18 @@
       ansible.builtin.shell: ./script.sh >> output.txt
       args:
         chdir: /home/shadmin/test
-        
+
     - name: Create the text file
       ansible.builtin.copy:
         content: |
           This is the content of the text file.
           You can add multiple lines of text here.
         dest: /home/shadmin/test/Textfile.txt
+    
+    - name: Display current working directory (pwd)
+      ansible.builtin.command: pwd
+      register: pwd_output
+
+    - name: Show the output
+      ansible.builtin.debug:
+        var: pwd_output.stdout_lines
