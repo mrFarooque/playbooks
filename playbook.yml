@@ -1,6 +1,8 @@
 ---
 - name: run my local script
   hosts: shdemo_rpi
+  gather_facts: false
+  become_user: yes
   
   tasks:
     - name: Run the script
