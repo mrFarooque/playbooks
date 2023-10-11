@@ -11,4 +11,4 @@
       ansible.builtin.shell: ./script.sh >> output2.txt
       args:
         chdir: /home/shadmin/test
-      when: run_script|lower == 'ACTIVE'
+      when: run_script|lower == 'active'
