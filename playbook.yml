@@ -3,24 +3,12 @@
   hosts: shdemo_rpi
   gather_facts: false
   become_user: yes
-  
+
+  vars_prompt: []
+
   tasks:
     - name: Run the script
-      ansible.builtin.shell: ./script.sh >> output.txt
+      ansible.builtin.shell: ./script.sh >> output2.txt
       args:
         chdir: /home/shadmin/test
-
-    - name: Create the text file
-      ansible.builtin.copy:
-        content: |
-          This is the content of the text file.
-          You can add multiple lines of text here.
-        dest: /home/shadmin/test/Textfile.txt
-    
-    - name: Display current working directory (pwd)
-      ansible.builtin.command: pwd
-      register: pwd_output
-
-    - name: Show the output
-      ansible.builtin.debug:
-        var: pwd_output.stdout_lines
+      when: run_script|lower == 'yes'
