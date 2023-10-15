@@ -1,0 +1,18 @@
+---
+- name: Enable USB Ports
+  hosts: shdemo_rpi
+  gather_facts: false
+  become_user: yes
+
+  vars_prompt: []
+
+  tasks:
+    - name: Send GET request to localhost
+      uri:
+        url: "localhost:8080/enableUSB"
+        method: GET
+        status_code: 200
+      register: api_response
+    - name: Display the value of run_script variable
+      debug:
+        msg: "Value of run_script variable: {{ api_response }}"
