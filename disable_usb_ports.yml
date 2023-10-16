@@ -17,4 +17,3 @@
     - name: Display the value of run_script variable
       debug:
         msg: "Value of run_script variable: {{ api_response }}"
-        when: run_script|lower == 'active'
