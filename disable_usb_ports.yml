@@ -1,0 +1,20 @@
+---
+- name: DIsable USB Ports
+  hosts: shdemo_rpi
+  gather_facts: false
+  become_user: yes
+
+  vars_prompt: []
+
+  tasks:
+    - name: Send GET request to localhost
+      uri:
+        url: "http://localhost:8081/disableUSB"
+        method: GET
+        status_code: 200
+      register: api_response
+      when: run_script|lower == 'active'
+    - name: Display the value of run_script variable
+      debug:
+        msg: "Value of run_script variable: {{ api_response }}"
+        when: run_script|lower == 'active'
