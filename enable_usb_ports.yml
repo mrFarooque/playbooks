@@ -1,6 +1,6 @@
 ---
-- name: Enable USB Ports
-  hosts: shdemo_rpi
+- name: Enable USB Ports NUC
+  hosts: farooq
   gather_facts: false
   become_user: yes
 

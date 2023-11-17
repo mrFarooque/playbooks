@@ -1,6 +1,6 @@
 ---
-- name: DIsable USB Ports
-  hosts: shdemo_rpi
+- name: Disable USB Ports for NUC
+  hosts: farooq
   gather_facts: false
   become_user: yes
 

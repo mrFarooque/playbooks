@@ -1,6 +1,6 @@
 ---
 - name: Increment Counter
-  hosts: shdemo_rpi
+  hosts: farooq
   gather_facts: false
   become_user: yes
 
