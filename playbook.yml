@@ -1,6 +1,6 @@
 ---
 - name: run my local script
-  hosts: shdemo_rpi
+  hosts: farooq
   gather_facts: false
   become_user: yes
 
@@ -10,5 +10,4 @@
     - name: Run the script
       ansible.builtin.shell: ./script.sh >> output2.txt
       args:
-        chdir: /home/shadmin/test
-      when: run_script|lower == 'active'
+        chdir: /home/farooq/test
