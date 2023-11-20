@@ -1,6 +1,6 @@
 ---
 - name: Decrement Counter
-  hosts: farooq
+  hosts: shdemo_nuc
   gather_facts: false
   become_user: yes
 
