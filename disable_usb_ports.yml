@@ -1,6 +1,6 @@
 ---
 - name: Disable USB Ports for NUC
-  hosts: farooq
+  hosts: shdemo_nuc
   gather_facts: false
   become_user: yes
 
@@ -9,7 +9,7 @@
   tasks:
     - name: Send GET request to localhost
       uri:
-        url: "http://localhost:8080/disableUSB"
+        url: "http://localhost:8080/disableUSBPorts"
         method: GET
         status_code: 200
       register: api_response
